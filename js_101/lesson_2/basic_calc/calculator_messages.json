@@ -1,27 +1,34 @@
 {
   "en": {
   "welcome":"Welcome to the Calculator Program. Let's crunch some numbers!",
-  "firstNumber": "First Number: ",
-  "secondNumber": "Second Number: ",
-  "invalidNumber": "Hmm... that doesn't look like a valid number.",
-  "operator": "Please choose an operator: +, -, *, /",
-  "validOperator": "Oops! Something went wrong. Choose a valid operator.",
-  "zero": "Error: Division by zero! Please enter a valid number.",
-  "calculating": "Calculating... Please wait a moment.",
+  "selectLanguage": "Please select a language from the available options:",
+  "invalidLanguage": "Invalid language. Please select a language from the available options:",
+  "languageConfirmation": "You selected English as your default language.",
+  "firstNumber": "Enter your first number:",
+  "secondNumber": "Enter your second number:",
+  "invalidNumber": "The number is invalid. Enter an integer number:",
+  "operator": "Please choose which operation do you want to perform:",
+  "invalidOperator": "Oops! Something went wrong.\n=> PLeae choose an operator from the available options:",
   "result": "The result is: ",
   "anotherOperation": "Would you like to perform another calculation? (n/y)",
-  "lastMessage": "Thank you for using the Calculator Program. Have a great day!",
-  "completed": "Congratulations! You have completed the calculation successfully."
-
+  "yesOrNo": "Please enter (y) for yes and (n) for no.",
+  "lastMessage": "Thank you for using the Calculator Program. Have a great day!"
   },
 
   "ps" : {
-    "welcome": "د حسابونکی ایپ ته ښه راغلاست. راځئ چې شمیرې کمې کړو!",
-    "pashtoText": "\u067E\u0698\u0647 \u067E\u06D0\u0645\u0627\u0646\u0647 \u062F\u0649 \u067E\u0648\u0647\u0644\u0649 \u0634\u0627\u0648\u06D0"
+    "welcome": " !د حسابونکی ایپ ته ښه راغلاست. راځئ چې شمیرې کمې کړو!",
+    "selectLanguage": "مهربانی یو ژبه وټاکی.",
+    "invalidLanguage":"مهربانی وکری یوه ژبه وټاکی ",
+    "languageConfirmation": "تاسو پښتو ژبه وټاکله.",
+    "firstNumber": ": لومری شمیره دننه کری",
+    "secondNumber": "دوهمه شمیره دننه کری ",
+    "invalidNumber":"شمیره مو ناسمه ده. مهربانی وکری سمه شمیره دننه کری ",
+    "operator":"مهربانی وکری له دغو عملیو څخه یوه عملیه وټاکي ",
+    "zero":"ناسمه هڅه. به صفر تقسیمات. مهربانی وکری سمه شمیره وټاکی ",
+    "result": "پایله ده: ",
+    "anotherOperation": "آیا غواری چی بیا هڅه وکری؟ ",
+    "lastMessage":"مننه چی د حسابونکی ایپ مو غوره کړ! ",
+    "completed":"مبارک مو شه. تاسو په بریالی توګه حساب سرته ورساوو! "
   
-    
-
   }
-
-  
 }
