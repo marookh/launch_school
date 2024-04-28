@@ -1,0 +1,16 @@
+{
+  "en": {
+    "welcome": "Welcome to Mortgage Calculator!",
+    "info": "This calculator allows you for basic car loan calculation such as mortgage.",
+    "amount": "Enter the loan amount.",
+    "APR": "Enter the Annual Percentage rate.",
+    "example": "Ex: enter 5 for 5% or 5.5 for 5.5%",
+    "duration": "Enter the loan duration in (years)",
+    "invalidNumber": "Invalid number. Please enter a positive number.",
+    "payment": "Your monthly payment:",
+    "again": "Another calculation?",
+    "stop": "Please enter 'y' or 'n'.",
+    "thank": "Thank you for choosing Car Loan Calculator! Have a good time!"
+  }
+}
+
