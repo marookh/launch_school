@@ -45,28 +45,24 @@ function doCalculation(num1, num2, operation) {
 function confirmLanguageChoice(userLang) {
   if (AVAILABLE_LANGUAGES.includes(userLang)) {
     LANGUAGE = userLang;
-    if (userLang === LANGUAGE) {
-      displayMessage("languageConfirmation");
-    } else if (userLang === 'ps') {
-      displayMessage("languageConfirmation");
-    }
-  }
+    displayMessage("languageConfirmation");
+  } 
 }
 
 // Main program
 displayMessage("welcome");
+displayMessage("selectLanguage", AVAILABLE_LANGUAGES.join(', '));
+let language = readline.question().toLowerCase();
+
+while (!AVAILABLE_LANGUAGES.includes(language)) {
+  console.clear()
+  displayMessage("invalidLanguage", AVAILABLE_LANGUAGES.join(', '));
+  language = readline.question().toLowerCase();
+}
+
+confirmLanguageChoice(language);
 
 while (true) {
-  displayMessage("selectLanguage", AVAILABLE_LANGUAGES.join(', '));
-  let defaultLanguage = readline.question().toLowerCase();
-
-  while (!AVAILABLE_LANGUAGES.includes(defaultLanguage)) {
-    displayMessage("invalidLanguage", AVAILABLE_LANGUAGES.join(', '));
-    defaultLanguage = readline.question().toLowerCase();
-  }
-
-  confirmLanguageChoice(defaultLanguage);
-
   displayMessage("firstNumber");
   let number1 = readline.question();
 
@@ -85,12 +81,12 @@ while (true) {
     number2 = readline.question();
   }
 
-  displayMessage("operator");
+  displayMessage("operator", VALID_OPERATIONS.join(', '));
   let operation = readline.question();
 
   while (invalidOperator(operation)) {
     console.clear();
-    displayMessage("invalidOperator");
+    displayMessage("invalidOperator", VALID_OPERATIONS.join(', '));
     operation = readline.question();
   }
 
