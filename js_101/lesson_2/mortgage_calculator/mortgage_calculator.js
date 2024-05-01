@@ -16,11 +16,12 @@ function isInvalidNumber(number) {
 function determineUserResponse(resp) {
   if (resp[0] !== 'n') {
     console.clear();
+    return true;
   } else {
     console.clear();
     displayMessage('thank');
+    return false;
   }
-  return false;
 }
 
 function askUserContiueOrStop() {
@@ -81,10 +82,12 @@ function getDuration() {
   return loanDurationInYears;
 }
 
-function calculateRate(amount, rate, years) {
+function monthlyRate(rate) {
   let annualInterestRate = rate / 100;
-  let monthlyInterestRate = annualInterestRate / 12;
-
+  return annualInterestRate / 12;
+}
+function calculateRate(amount, rate, years) {
+  let monthlyInterestRate = monthlyRate(rate);
   let loanDurationInMonths = years * 12;
 
 
@@ -100,9 +103,14 @@ function runProgram() {
   let loanAmount = getAmount();
   let interestRate = getAPR();
   let duration = getDuration();
-
   let payment = calculateRate(loanAmount, interestRate, duration);
+  let monthlyInterestRate = monthlyRate(interestRate);
+
+  displayMessage('loanAmount', `$${loanAmount}`);
+  displayMessage('years', `${duration} years`);
+  displayMessage('annualInterstRate', `${interestRate}`);
   displayMessage('payment', `$${payment}`);
+  displayMessage('monthlyInterestRate', `${monthlyInterestRate.toFixed(2)}`);
 }
 
 // Main Program

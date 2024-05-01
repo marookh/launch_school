@@ -7,9 +7,13 @@
     "example": "Ex: enter 5 for 5% or 5.5 for 5.5%",
     "duration": "Enter the loan duration in (years)",
     "invalidNumber": "Invalid number. Please enter a positive number.",
+    "loanAmount": "Your loan amount:",
+    "years": "Your loan duration:",
+    "annualInterstRate": "Your APR:",
+    "monthlyInterestRate": "Your monthly interest rate:",
     "payment": "Your monthly payment:",
     "again": "Another calculation?",
-    "stop": "Please enter 'y' or 'n'.",
+    "stop": "Please enter 'y' to continue or 'n' to stop the play.",
     "thank": "Thank you for choosing Car Loan Calculator! Have a good time!"
   }
 }
