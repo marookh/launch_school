@@ -105,12 +105,13 @@ function runProgram() {
   let duration = getDuration();
   let payment = calculateRate(loanAmount, interestRate, duration);
   let monthlyInterestRate = monthlyRate(interestRate);
+  console.clear();
 
   displayMessage('loanAmount', `$${loanAmount}`);
   displayMessage('years', `${duration} years`);
-  displayMessage('annualInterstRate', `${interestRate}`);
+  displayMessage('annualInterstRate', `${interestRate}%`);
   displayMessage('payment', `$${payment}`);
-  displayMessage('monthlyInterestRate', `${monthlyInterestRate.toFixed(2)}`);
+  displayMessage('monthlyInterestRate', `${monthlyInterestRate.toFixed(2)}%`);
 }
 
 // Main Program
