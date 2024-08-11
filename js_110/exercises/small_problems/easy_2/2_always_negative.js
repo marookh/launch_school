@@ -1,0 +1,15 @@
+// Time: [4:00 - 4: 4]
+// Always Return Negative
+// Write a function that takes a number as an argument. If the argument is a positive number, return the negative of that number. If the argument is a negative number, return it as-is.
+const p = console.log;
+
+function negative(num) {
+  return num < 0 ? num : -num;
+}
+
+const negative = num => Math.abs(num) * -1;
+// Examples:
+
+p(negative(5));     // -5
+p(negative(-3));    // -3
+p(negative(0));     // -0
