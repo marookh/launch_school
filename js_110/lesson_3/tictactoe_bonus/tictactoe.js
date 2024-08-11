@@ -86,13 +86,13 @@ function detectWinner(board) {
       board[sq2] === HUMAN_MARKER &&
       board[sq3] === HUMAN_MARKER
     ) {
-      return 'Player!';
+      return 'Player';
     } else if (
       board[sq1] === COMPUTER_MARKER &&
       board[sq2] === COMPUTER_MARKER &&
       board[sq3] === COMPUTER_MARKER
     ) {
-      return 'Computer!';
+      return 'Computer';
     }
   }
 
@@ -116,7 +116,7 @@ while (true) {
   displayBoard(board);
 
   if (someoneWon(board)) {
-    prompt(`${detectWinner(board)} + win!`);
+    prompt(`${detectWinner(board)}  win!`);
   } else {
     prompt(`It's a tie!`);
   }
@@ -127,4 +127,4 @@ while (true) {
   if (answer !== 'y') break;  
 }
 
-prompt(`Thank you for play the Tic Tac Toe game`);
+prompt(`Thank you for play the Tic Tac Toe game!`);

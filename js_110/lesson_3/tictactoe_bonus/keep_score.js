@@ -67,6 +67,6 @@ let scores = {
 
 // Play multiple games
 for (let i = 1; i <= 10; i++) {
-    console.log(`Game ${i}:`);
-    (scores = playGame(scores));
+  console.log(`Game ${i}:`);
+  scores = playGame(scores);
 }
