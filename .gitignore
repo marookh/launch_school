@@ -1,3 +1,7 @@
 node_modules/
 configurations/
 js_120/tmp/*
+babel.config.js
+eslint.config.mjs
+package-lock.json
+package.json
