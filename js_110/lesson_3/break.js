@@ -1,4 +1,4 @@
-// // break.js
+// break.js
 let counter = 1;
 
 while (counter <= 5) {
