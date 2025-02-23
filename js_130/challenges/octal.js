@@ -70,34 +70,34 @@ Define a class: Octal
 */
 
 class Octal {
-  constructor(digits) {
-    this.digits = digits;
+  constructor(octal) {
+    this.number = octal;
   }
 
-  static validOctalNums = [0, 1, 2, 3, 4, 5, 6, 7];
-
   toDecimal() {
-    if (!this.isValid()) {
+    if (!this.isValidOctal()) {
       return 0;
     }
 
-    let num = Number(this.digits);
+    let arrDigits = this.reversedDigits();
     let decimal = 0;
 
-    for (let exponent = 0; exponent < this.digits.length; exponent += 1) {      
-      let lastNum = num % 10;
-
-      decimal += (lastNum * Math.pow(8, exponent));
-      num = Math.floor(num / 10);
-    }
+    arrDigits.forEach((digit, exponent) => {
+      decimal += (digit * (8 ** exponent));
+    });
 
     return decimal;
   }
 
-  isValid() {
-    return this.digits.split('').every(digit => {
-      return Octal.validOctalNums.includes(Number(digit))
-    })
+  reversedDigits() {
+    return this.number.split('')
+                      .map(digit => Number(digit))
+                      .reverse();
+  }
+
+  isValidOctal() {
+    return this.number.split('')
+                      .every(char => char.match(/[0-7]/));
   }
 }
 
