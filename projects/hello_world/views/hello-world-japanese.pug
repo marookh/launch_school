@@ -1,31 +1,34 @@
 doctype html
-
 html
   head
-    title Ово је наслов странице
+    title こんにちは世界
     meta(charset="UTF-8")
     link(rel="stylesheet" href="/stylesheets/application.css")
-
   body
     nav
-    ul
+      ul
         li
-        a(href="/english")
+          a(href="/english")
             img.flag(src="/images/flag-of-United-States-of-America.png"
                     alt="US Flag"
                     title="Go to US English site")
         li
-        a(href="/french")
+          a(href="/french")
             img.flag(src="/images/flag-of-France.png"
                     alt="Drapeau de la france"
                     title="Aller sur le site français")
         li
-        a.current(href="/serbian")
+          a(href="/serbian")
             img.flag(src="/images/flag-of-Serbia.png"
                     alt="Застава Србије"
                     title="Идите на српски сајт")
+        li
+          a.current(href="/japanese")
+            img.flag(src="/images/flag_of_Japan.svg.png"
+                  alt="日本の国旗"
+                  title="日本語サイトへ")
     header
-      h1 Здраво свете!
+      h1 こんにちは世界！
     main
-      p Ускоро ћу бити софтверски инжењер!
-      img(src="/images/earth.jpg" alt="Планета Земља" title="Планета Земља")
+      p 私はすぐにソフトウェアエンジニアになります！
+      img(src="/images/earth.jpg" alt="地球" title="地球")

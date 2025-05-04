@@ -29,6 +29,10 @@ app.get("/dari", (req, res) => {
   res.render("hello-world-dari");
 });
 
+app.get("/japanese", (req, res) => {
+  res.render("hello-world-japanese");
+});
+
 app.listen(3000, "localhost", () => {
     console.log("Listening on port 3000.");
 })
