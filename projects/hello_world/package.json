@@ -8,7 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Final code for Hello World project in JS-175",
   "dependencies": {
     "express": "^5.1.0",
     "morgan": "^1.10.0",

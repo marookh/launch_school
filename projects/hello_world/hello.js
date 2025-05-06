@@ -41,6 +41,16 @@ const COUNTRY_DATA = [
   },
 ];
 
+const LANGUAGE_CODES = {
+  english: "en-US",
+  french: "fr-FR",
+  serbian: "sr-Cryl-rs",
+  dari:  "fa-AF",
+  pashto: "ps-AF",
+  japanese: "ja-JP",
+};
+
+// look for views in the views directory and use pug view engine
 app.set("views", "./views");
 app.set("view engine", "pug");
 
@@ -51,57 +61,30 @@ app.locals.currentPathClass = (path, currentPath) => {
   return path === currentPath ? "current" : "";
 };
 
+// route for base path /
 app.get("/", (req, res) => {
-    res.render("hello-world-english", {
-    });
+  res.redirect("/english");
 })
 
-app.get("/english", (req, res) => {
-  res.render("hello-world-english", {
-    countries: COUNTRY_DATA,
-    currentPath: req.path,
-    language:"en-US",
-  });
+// router for languages
+app.get("/:language", (req, res, next) => {
+  const language = req.params.language;
+  const languageCode = LANGUAGE_CODES[language];
+  if (!languageCode) {
+    next(new Error(`Language not supported: ${language}`));
+  } else {
+    res.render(`hello-world-${language}`, {
+      countries: COUNTRY_DATA,
+      currentPath: req.path,
+      language: languageCode,
+    });
+  }
 });
 
-app.get("/french", (req, res) => {
-  res.render("hello-world-french", {
-    countries: COUNTRY_DATA,
-    currentPath: req.path,
-    languague:"fr-FR",
-  });
-});
-
-app.get("/serbian", (req, res) => {
-  res.render("hello-world-serbian", {
-    countries: COUNTRY_DATA,
-    currentPath: req.path,
-    language: "sr-Cyrl-rs",
-  });
-});
-
-app.get("/dari", (req, res) => {
-  res.render("hello-world-dari", {
-    countries: COUNTRY_DATA,
-    currentPath: req.path,
-    language: "fa-AF",
-  });
-});
-
-app.get("/pashto", (req, res) => {
-  res.render("hello-world-pashto", {
-    countries: COUNTRY_DATA,
-    currentPath: req.path,
-    language: "ps-AF", 
-  });
-});
-
-app.get("/japanese", (req, res) => {
-  res.render("hello-world-japanese", {
-    countries: COUNTRY_DATA,
-    currentPath: req.path,
-    language: "ja-JP", 
-  });
+// Error handler
+app.use((err, req, res, _next) => {
+  console.log(err);
+  res.status(404).send(err.message);
 });
 
 app.listen(3000, "localhost", () => {
