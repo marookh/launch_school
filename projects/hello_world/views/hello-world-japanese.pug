@@ -1,34 +1,13 @@
-doctype html
-html
-  head
-    title こんにちは世界
-    meta(charset="UTF-8")
-    link(rel="stylesheet" href="/stylesheets/application.css")
-  body
-    nav
-      ul
-        li
-          a(href="/english")
-            img.flag(src="/images/flag-of-United-States-of-America.png"
-                    alt="US Flag"
-                    title="Go to US English site")
-        li
-          a(href="/french")
-            img.flag(src="/images/flag-of-France.png"
-                    alt="Drapeau de la france"
-                    title="Aller sur le site français")
-        li
-          a(href="/serbian")
-            img.flag(src="/images/flag-of-Serbia.png"
-                    alt="Застава Србије"
-                    title="Идите на српски сајт")
-        li
-          a.current(href="/japanese")
-            img.flag(src="/images/flag_of_Japan.svg.png"
-                  alt="日本の国旗"
-                  title="日本語サイトへ")
-    header
-      h1 こんにちは世界！
-    main
-      p 私はすぐにソフトウェアエンジニアになります！
-      img(src="/images/earth.jpg" alt="地球" title="地球")
+extends layout
+
+block page_title
+  title こんにちは世界 - 日本語
+
+block greeting
+  h1 こんにちは世界!
+
+block software_engineer
+  p 私はすぐにソフトウェアエンジニアになります！
+  img(src="/images/earth.jpg"
+      alt="地球"
+      title="地球")
