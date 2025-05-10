@@ -5,6 +5,7 @@ const session = require("express-session");
 const store = require("connect-loki");
 const app = express();
 const LokiStore = store(session);
+const flash = require("express-flash");
 
 const contactData = [
   {
@@ -71,6 +72,7 @@ app.use(session({
   store: new LokiStore({}),
 }));
 
+app.use(flash());
 app.use((req, res, next) => {
   if (!("contactData" in req.session)) {
     req.session.contactData = clone(contactData);
@@ -81,6 +83,12 @@ app.use((req, res, next) => {
 
 app.get("/", (req, res) => {
   res.redirect("/contacts");
+});
+
+app.use((req, res, next) => {
+  res.locals.flash = req.session.flash;
+  delete req.session.flash;
+  next();
 });
 
 app.get("/contacts", (req, res) => {
@@ -121,8 +129,10 @@ app.get("/contacts/new", (req, res) => {
     (req, res, next) => {
       let errors = validationResult(req);
       if (!errors.isEmpty()) {
+        errors.array().forEach(error => req.flash("error", error.msg)); // comment this out for now
+  
         res.render("new-contact", {
-          errorMessages: errors.array().map(error => error.msg),
+          flash: req.flash(),
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           phoneNumber: req.body.phoneNumber,
@@ -138,6 +148,7 @@ app.get("/contacts/new", (req, res) => {
         phoneNumber: req.body.phoneNumber,
       });
   
+      req.flash("success", "New contact added to the list!");
       res.redirect("/contacts");
     }
   );
