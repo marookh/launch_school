@@ -9,9 +9,12 @@
         border-collapse: collapse;
       }
 
-      td {
+      tbody tr:nth-of-type(2n+1) {
         background-color: orange;
-        border: 0;
+      }
+
+      tbody tr:nth-of-type(2n+2) {
+        background-color: yellow;
       }
      
     </style>
@@ -26,25 +29,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="odd-row">
+        <tr>
           <td>Apple</td>
           <td>34</td>
           <td>$3.99/lb</td>
         </tr>
   
-        <tr class="even-row">
+        <tr>
           <td>Banana</td>
           <td>116</td>
           <td>$1.69/lb</td>
         </tr>
   
-        <tr class="odd-row">
+        <tr>
           <td>Carrot</td>
           <td>42</td>
           <td>$2.49/lb</td>
         </tr>
   
-        <tr class="even-row">
+        <tr>
           <td>Kiwi</td>
           <td>18</td>
           <td>$0.69 ea.</td>
