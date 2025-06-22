@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Example Contact Form</title>
+    <meta charset="utf-8">
+    <style>
+      .contact-form * {
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <form action="#" class="contact-form top-to-bottom" method="post">
+      <fieldset>
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name" required>
+
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name" required>
+
+        <label for="emial_address">Email Address</label>
+        <input type="email" name="email_address" id="email_address" 
+               autocomplete="off" autocorrect="off" autocapitalize="none" required>
+
+        <label for="phone_number">Phone Number</label>
+        <input type="tel" name="phone_number" id="phone_number" required>
+
+        <input type="submit" value="Send">
+      </fieldset>
+    </form>
+  </body>
+</html>

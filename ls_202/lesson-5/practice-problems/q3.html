@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Example Contact Form</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <form action="#" method="post">
+      <dl>
+        <dt><label for="first_name">First Name</label></dt>
+        <dd><input type="text" name="first_name" id="first_name" required></dd>
+        
+        <dt><label for="last_name">Last Name</label></dt>
+        <dd><input type="text" name="last_name" id="last_name" required></dd>
+
+        <dt><label for="email">Email Address</label></dt>
+        <dd><input type="email" name="email_address" id="email" 
+          autocomplete="off" autocorrect="off" autocapitalize="none" required></dd>
+
+        <dt><label for="phone_number">Phone Number</label></dt>
+        <dd><input type="tel" name="phone_number" id="phone_number" 
+                   placeholder="###-###-####"></dd>
+
+        <dt><label for="fone-type">Phone Type</label></dt>
+        <dd>
+          <select name="phone-type" id="phone-type">
+            <option value="home" selected>home</option>
+            <option value="business">business</option>
+            <option value="mobile">mobile</option>
+          </select>
+
+          <dt><label for="optional-msg">Message</label></dt>
+          <dd>
+            <textarea id="optional-msg" name="optional-msg" placeholder="Type your message here." cols="80" rows="6"></textarea>
+        </dd>
+
+        <input type="submit" value="Send">
+      </dl>
+    </form>
+  </body>
+</html>
